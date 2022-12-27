@@ -10,9 +10,33 @@
 		
 		<section class="center-section">
 
-			<form class="user-form" method="post" action="/Nasa-JSP/auth/register">
+			<form class="center-box" method="post" action="/Nasa-JSP/auth/register">
 				<div class="input-box">
-					<label class="input-label">
+					<label class="input-label" for="firstName">
+						First Name
+					</label>
+					<input
+						class="input"
+						type="text"
+						name="firstName"
+						id="firstName"
+						value="<c:out value="${firstName}" />"
+					/>
+				</div>
+				<div class="input-box">
+					<label class="input-label" for="lastName">
+						Last Name
+					</label>
+					<input
+						class="input"
+						type="text"
+						name="lastName"
+						id="lastName"
+						value="<c:out value="${lastName}" />"
+					/>
+				</div>
+				<div class="input-box">
+					<label class="input-label" for="email">
 						Email
 					</label>
 					<input
@@ -24,7 +48,7 @@
 					/>
 				</div>
 				<div class="input-box">
-					<label class="input-label">
+					<label class="input-label" for="password">
 						Password
 					</label>
 					<input
@@ -38,18 +62,18 @@
 					<button type="submit" class="input button">
 						<p>Register</p>
 					</button>
-				</div>	
+				</div>
 			</form>
-			
+				
 			<div class="switch-auth">
 				<p></p>
 			</div>
 			
 			<div id="form-message-container">
 				<c:forEach var="message" items="${messages}">
-					<p>
+					<span>
 	  					<c:out value="${message}" />
-	  				</p>
+	  				</span>
 				</c:forEach>
 			</div>
 		</section>

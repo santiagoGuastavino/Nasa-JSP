@@ -10,7 +10,7 @@
 		
 		<section class="center-section">
 
-			<form class="user-form" method="post" action="/Nasa-JSP/auth/login">
+			<form class="center-box" method="post" action="/Nasa-JSP/auth/login">
 				<div class="input-box">
 					<label class="input-label">
 						Email
@@ -38,7 +38,7 @@
 					<button type="submit" class="input button">
 						<p>Log in</p>
 					</button>
-				</div>	
+				</div>
 			</form>
 			
 			<div class="switch-auth">
@@ -47,9 +47,9 @@
 			
 			<div id="form-message-container">
 				<c:forEach var="message" items="${messages}">
-					<p>
+					<span>
 	  					<c:out value="${message}" />
-	  				</p>
+	  				</span>
 				</c:forEach>
 			</div>
 		</section>

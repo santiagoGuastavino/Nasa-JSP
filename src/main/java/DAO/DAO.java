@@ -14,5 +14,7 @@ public interface DAO<T> {
 	
 	public T getOne(String field) throws SQLException;
 	
+	public List<T> getByField(String field) throws SQLException;
+	
 	public List<T> getAll() throws SQLException;
 }

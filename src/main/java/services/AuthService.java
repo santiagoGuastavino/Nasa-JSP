@@ -23,8 +23,8 @@ public class AuthService {
 
 		try {
 			user = userDAO.getOne(email);
-		} catch (SQLException e) {
-			e.printStackTrace();
+		} catch (SQLException error) {
+			error.printStackTrace();
 		}
 
 		return user;
@@ -44,12 +44,16 @@ public class AuthService {
 		return matcher.find();
 	}
 	
-	public void insertUser(String email, String password) {
+	public void insertUser(String email, String password, String firstName, String lastName) {
 		User newUser = new User();
 
 		newUser.setEmail(email);
+
 		String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt(12));
 		newUser.setPassword(hashedPassword);
+
+		newUser.setFirstName(firstName);
+		newUser.setLastName(lastName);
 
 		try {
 			userDAO.insert(newUser);

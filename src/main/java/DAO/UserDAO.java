@@ -15,13 +15,15 @@ public class UserDAO implements DAO<User> {
 		Connection connection = ConnectionFactory.getConnection();
 		
 		String rawQuery = "insert into users";
-		rawQuery += " (email, password)";
-		rawQuery += " values (?, ?);";
+		rawQuery += " (email, password, first_name, last_name)";
+		rawQuery += " values (?, ?, ?, ?);";
 		
 		PreparedStatement preparedStatement = connection.prepareStatement(rawQuery);
 		
 		preparedStatement.setString(1, user.getEmail());
 		preparedStatement.setString(2, user.getPassword());
+		preparedStatement.setString(3, user.getFirstName());
+		preparedStatement.setString(4, user.getLastName());
 		
 		preparedStatement.executeUpdate();
 		
@@ -30,12 +32,12 @@ public class UserDAO implements DAO<User> {
 
 	@Override
 	public void update(User model) throws SQLException {
-
+		return;
 	}
 
 	@Override
 	public void delete(int id) throws SQLException {
-
+		return;
 	}
 
 	@Override
@@ -49,7 +51,7 @@ public class UserDAO implements DAO<User> {
 		
 		Connection connection = ConnectionFactory.getConnection();
 		
-		String rawQuery = "select email, password from users";
+		String rawQuery = "select * from users";
 		rawQuery += " where email =";
 		rawQuery += " (?);";
 		
@@ -61,10 +63,20 @@ public class UserDAO implements DAO<User> {
 		
 		while (resultSet.next()) {
 			String password = resultSet.getString("password");
-			user = new User(email, password);
+			String image = resultSet.getString("image");
+			String firstName = resultSet.getString("first_name");
+			String lastName = resultSet.getString("last_name");
+
+			user = new User(email, password, firstName, lastName);
+			user.setImage(image);
 		}
 		
 		return user;
+	}
+	
+	@Override
+	public List<User> getByField(String field) throws SQLException {
+		return null;
 	}
 
 	@Override

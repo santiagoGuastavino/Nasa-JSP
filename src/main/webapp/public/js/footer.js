@@ -1,9 +1,8 @@
 const PATHS_FOOTER = {
 	INDEX: '/Nasa-JSP/',
-	AUTH: [
-		'/Nasa-JSP/auth/login',
-		'/Nasa-JSP/auth/register',
-	],
+	LOGIN: '/Nasa-JSP/auth/login',
+	REGISTER: '/Nasa-JSP/auth/register',
+	USER: '/Nasa-JSP/user',
 };
 
 const ICONS_FOOTER = {
@@ -14,15 +13,29 @@ const ICONS_FOOTER = {
 const currentLocationFooter = window.location.pathname;
 
 const iconFooter = document.querySelector('#icon');
-const linkFooter = document.querySelector('#link');
+const linkToAuth = document.querySelector('#empty-session-link');
+const linkToUser = document.querySelector('#full-session-link');
 
-if (currentLocationFooter === PATHS_FOOTER.INDEX) {
-	addClasses(ICONS_FOOTER.USER);
-	setLink(PATHS_FOOTER.AUTH[0]);
-} else {
-	addClasses(ICONS_FOOTER.HOME);
-	setLink(PATHS_FOOTER.INDEX);
+if (linkToAuth) {
+	if (currentLocationFooter === PATHS_FOOTER.INDEX) {
+		addClasses(ICONS_FOOTER.USER);
+		setLink(linkToAuth, PATHS_FOOTER.LOGIN);
+	} else {
+		addClasses(ICONS_FOOTER.HOME);
+		setLink(linkToAuth, PATHS_FOOTER.INDEX);
+	}	
 }
+
+if (linkToUser) {
+	if (currentLocationFooter === PATHS_FOOTER.INDEX) {
+		addClasses(ICONS_FOOTER.USER);
+		setLink(linkToUser, PATHS_FOOTER.USER);
+	} else {
+		addClasses(ICONS_FOOTER.HOME);
+		setLink(linkToUser, PATHS_FOOTER.INDEX);
+	}
+}
+
 
 function addClasses (classesToAdd) {
 	iconFooter.className = '';
@@ -32,7 +45,7 @@ function addClasses (classesToAdd) {
 	return;
 };
 
-function setLink(linkToSet) {
-	linkFooter.href = linkToSet;
+function setLink(targetLink, linkToSet) {
+	targetLink.href = linkToSet;
 	return;
 };

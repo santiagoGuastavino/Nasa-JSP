@@ -20,13 +20,14 @@ if (currentLocationAuth === PATHS_AUTH.LOGIN) {
 		`Don't have an account? <a href='${PATHS_AUTH.REGISTER}'>Register</a>`;
 } else if (currentLocationAuth === PATHS_AUTH.REGISTER) {
 	linkAuth.innerHTML =
-		`Do you have an account? <a href='${PATHS_AUTH.LOGIN}'>Login</a>`;
+		`Do you have an account? <a href='${PATHS_AUTH.LOGIN}'>Log in</a>`;
 }
 
 
 // Focus on first input && submit by pressing enter
 
 const authForm = document.querySelector('form');
+const firstNameInput = authForm.firstName;
 const emailInput = authForm.email;
 const passwordInput = authForm.password;
 
@@ -36,7 +37,9 @@ const bothInputs = [
 ];
 
 window.addEventListener('load', () => {
-	emailInput.focus();
+	firstName
+		? firstNameInput.focus()
+		: emailInput.focus();
 });
 
 bothInputs.forEach((input) => {
