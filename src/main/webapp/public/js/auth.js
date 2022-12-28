@@ -18,7 +18,7 @@ const linkAuth = document.querySelector('div.switch-auth p');
 if (currentLocationAuth === PATHS_AUTH.LOGIN) {
 	linkAuth.innerHTML =
 		`Don't have an account? <a href='${PATHS_AUTH.REGISTER}'>Register</a>`;
-} else if (currentLocationAuth === PATHS_AUTH.REGISTER) {
+} else if (currentLocationAuth.includes(PATHS_AUTH.REGISTER)) {
 	linkAuth.innerHTML =
 		`Do you have an account? <a href='${PATHS_AUTH.LOGIN}'>Log in</a>`;
 }

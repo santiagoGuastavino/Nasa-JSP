@@ -1,9 +1,9 @@
-FROM tomcat:9-jre11
+FROM tomcat:latest
 
 EXPOSE 8080
 
 RUN rm -fr /usr/local/tomcat/webapps/ROOT
 
-COPY ./ROOT.war /usr/local/tomcat/webapps/ROOT.war
+COPY ./nasa.war /usr/local/tomcat/webapps/nasa.war
 
 CMD ["catalina.sh", "run"]

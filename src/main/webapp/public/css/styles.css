@@ -198,9 +198,9 @@ input, button {
 	background-color: var(--black10);
 	margin: 0 20px;	
 	margin-bottom: 50px;
-	padding: 15px;
 	position: relative;
 	border-radius: var(--border-r);
+	box-shadow: var(--box-shadow);
 }
 
 .blog-article:first-child {
@@ -230,10 +230,10 @@ input, button {
 	flex-flow: row wrap;
 	align-items: center;
 	font-size: 20px;
-	padding: 5px 0;
 }
 
 .blog-article .blog-text p {
+	padding: 0 5px;
 	width: 100%;
 }
 
@@ -241,6 +241,13 @@ input, button {
 	background-color: var(--blue-l);
   	font: italic bold 30px Georgia, Serif;
   	text-shadow: -2px 1px 0 var(--blue-d), -3.5px 1.2px 0 var(--blue-d);
+  	padding: 10px 5px 5px 5px;
+  	margin-bottom: 5px;
+  	border-radius: var(--border-r) var(--border-r) 0 0;
+}
+
+.blog-article .blog-text .blog-collection {
+	margin-bottom: 5px;
 }
 
 .blog-article .blog-text .blog-collection a {
@@ -254,7 +261,7 @@ input, button {
 }
 
 .blog-article .blog-img {
-	border: 1px solid var(--white);
+	border-radius: 0 0 var(--border-r) var(--border-r);
 }
 
 .center-section {
@@ -446,6 +453,12 @@ input, button {
 		width: 100%;
 		border-radius: 0;
 		box-shadow: none;
+	}
+	
+	.blog-article {
+		width: 100%;
+		margin: 0;
+		margin-bottom: 50px;
 	}
 	
 	.center-box:after {

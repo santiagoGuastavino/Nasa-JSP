@@ -1,6 +1,6 @@
 <jsp:include page="../partials/head.jsp" />
 
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <script src="${pageContext.request.contextPath}/public/js/auth.js" defer type="text/javascript"></script>
 

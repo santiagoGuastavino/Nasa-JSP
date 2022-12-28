@@ -1,9 +1,9 @@
 <jsp:include page="./partials/head.jsp" />
 
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <body class="wrapper">
-	<main class="layout">
+	<main class="layout" style="margin-bottom: -1px">
 		<jsp:include page="./partials/navbar.jsp" />
 
 		<nav class="home-navigation">
