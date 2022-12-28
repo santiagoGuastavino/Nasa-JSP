@@ -14,8 +14,10 @@ public class AuthService {
 	
 	private static final Pattern VALID_EMAIL_ADDRESS_REGEX = 
 		    Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
+	/*
 	private static final Pattern STRONG_PASSWORD_REGEX =
 			Pattern.compile("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=_,!¡?¿;:-])(?=\\S+$).{6,}$");
+	*/
 
 	public User userExists(String email) {
 		User user = null;
@@ -40,8 +42,11 @@ public class AuthService {
 	}
 	
 	public boolean isStrongPassword(String password) {
+		/*
 		Matcher matcher = STRONG_PASSWORD_REGEX.matcher(password);
 		return matcher.find();
+		*/
+		return password.length() > 5;
 	}
 	
 	public void insertUser(String email, String password, String firstName, String lastName) {

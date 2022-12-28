@@ -14,7 +14,7 @@
 				<div class="image-box">
 					<img src="${pageContext.request.contextPath}/public/img/<c:out value="${image}" />" alt="user-image" />						
 				</div>
-				<form class="input-box" method="post" action="/Nasa-JSP/auth/logout">
+				<form class="input-box" method="post" action="/nasa/auth/logout">
 					<button type="submit" class="input button">
 						<p>Log out</p>
 					</button>

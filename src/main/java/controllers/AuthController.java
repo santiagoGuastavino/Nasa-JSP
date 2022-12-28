@@ -33,14 +33,14 @@ public class AuthController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		uri = request.getRequestURI();
-
+		
 		switch(uri) {
-			case "/Nasa-JSP/auth/login":
+			case "/nasa/auth/login":
 				request.setAttribute("title", LOGIN_TITLE);
 				request.getRequestDispatcher(LOGIN_PATH)
 					.forward(request, response);
 				break;
-			case "/Nasa-JSP/auth/register":
+			case "/nasa/auth/register":
 				request.setAttribute("title", REGISTER_TITLE);
 				request.getRequestDispatcher(REGISTER_PATH)
 					.forward(request, response);
@@ -52,13 +52,13 @@ public class AuthController extends HttpServlet {
 		uri = request.getRequestURI();
 		
 		switch(uri) {
-			case "/Nasa-JSP/auth/login":
+			case "/nasa/auth/login":
 				login(request, response);
 				break;
-			case "/Nasa-JSP/auth/register":
+			case "/nasa/auth/register":
 				register(request, response);
 				break;
-			case "/Nasa-JSP/auth/logout":
+			case "/nasa/auth/logout":
 				logout(request, response);
 				break;
 		}
@@ -154,7 +154,7 @@ public class AuthController extends HttpServlet {
 		boolean isStrongPassword = authService.isStrongPassword(password);
 		
 		if (password == null || "".equals(password) || !isStrongPassword) {
-			message = "Password must be at least 6 characters long and must contain, at least one lowercase and one uppercase character, and a simbol";
+			message = "Password must be at least 6 characters long.";
 			messages.add(message);
 		}
 		

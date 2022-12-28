@@ -1,8 +1,8 @@
 const PATHS_FOOTER = {
-	INDEX: '/Nasa-JSP/',
-	LOGIN: '/Nasa-JSP/auth/login',
-	REGISTER: '/Nasa-JSP/auth/register',
-	USER: '/Nasa-JSP/user',
+	INDEX: '/nasa/',
+	LOGIN: '/nasa/auth/login',
+	REGISTER: '/nasa/auth/register',
+	USER: '/nasa/user',
 };
 
 const ICONS_FOOTER = {

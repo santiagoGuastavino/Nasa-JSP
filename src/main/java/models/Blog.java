@@ -6,16 +6,26 @@ public class Blog {
 	private String image;
 	private int year;
 	private int collectionId;
+	private String collectionName;
 
 	public Blog() {}
 	
-	public Blog(int id, String title, String image, int year, int collectionId) {
+	public Blog(int id, String title, String image, int year, int collectionId, String collectionName) {
 		super();
 		this.id = id;
 		this.title = title;
 		this.image = image;
 		this.year = year;
 		this.collectionId = collectionId;
+		this.collectionName = collectionName;
+	}
+	
+	public int getId() {
+		return id;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getTitle() {
@@ -50,11 +60,11 @@ public class Blog {
 		this.collectionId = collectionId;
 	}
 
-	public int getId() {
-		return id;
+	public String getCollectionName() {
+		return collectionName;
 	}
-	
-	public void setId(int id) {
-		this.id = id;
+
+	public void setCollectionName(String collectionName) {
+		this.collectionName = collectionName;
 	}
 }

@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.Year;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,6 +38,7 @@ public class BlogDAO implements DAO<Blog> {
 	
 	@Override
 	public List<Blog> getByField(String field) throws SQLException {
+		return null;
 		/*
 		List<Blog> blogs = new ArrayList<Blog>();
 		
@@ -55,20 +55,23 @@ public class BlogDAO implements DAO<Blog> {
 		
 		Connection connection = ConnectionFactory.getConnection();
 		
-		String rawQuery = "select * from blogs";
+		String rawQuery = "SELECT blogs.id, title, image, year, collection_id, collections.id, name FROM blogs";
+		rawQuery += " INNER JOIN collections ON collection_id = collections.id";
+		rawQuery += " ORDER BY blogs.id ASC";
 		
 		PreparedStatement preparedStatement = connection.prepareStatement(rawQuery);
 		
 		ResultSet result = preparedStatement.executeQuery();
-		// i have to make inner join for the category
+
 		while (result.next()) {
 			int id = result.getInt("id");
 			String title = result.getString("title");
 			String image = result.getString("image");
 			int year = result.getInt("year");
 			int collectionId = result.getInt("collection_id");
+			String collectionName = result.getString("name");
 			
-			blogs.add(new Blog(id, title, image, year, collectionId));
+			blogs.add(new Blog(id, title, image, year, collectionId, collectionName));
 		}
 		
 		return blogs;

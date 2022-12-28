@@ -10,7 +10,7 @@
 		
 		<section class="center-section">
 
-			<form class="center-box" method="post" action="/Nasa-JSP/auth/register">
+			<form class="center-box" method="post" action="/nasa/auth/register">
 				<div class="input-box">
 					<label class="input-label" for="firstName">
 						First Name

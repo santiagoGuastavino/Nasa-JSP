@@ -3,9 +3,6 @@
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<!-- javascript -->
-<script src="${pageContext.request.contextPath}/public/js/index.js" defer type="text/javascript"></script>
-
 <html>
 <head>
 	<meta charset="UTF-8">

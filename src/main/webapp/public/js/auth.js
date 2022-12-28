@@ -7,8 +7,8 @@ if (messageContainer.childNodes.length > 1) {
 }
 
 const PATHS_AUTH = {
-	LOGIN: '/Nasa-JSP/auth/login',
-	REGISTER: '/Nasa-JSP/auth/register',
+	LOGIN: '/nasa/auth/login',
+	REGISTER: '/nasa/auth/register',
 }
 
 const currentLocationAuth = window.location.pathname;
@@ -37,7 +37,7 @@ const bothInputs = [
 ];
 
 window.addEventListener('load', () => {
-	firstName
+	firstNameInput
 		? firstNameInput.focus()
 		: emailInput.focus();
 });
