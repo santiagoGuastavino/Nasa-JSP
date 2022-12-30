@@ -5,24 +5,6 @@
 <body class="wrapper">
 	<main class="layout" style="margin-bottom: -1px">
 		<jsp:include page="./partials/navbar.jsp" />
-
-		<nav class="home-navigation">
-			<div>
-				<a>
-					Solar System
-				</a>
-			</div>
-			<div>
-				<a>
-					Visible Earth
-				</a>
-			</div>
-			<div>
-				<a>
-					Hubble Space Telescope
-				</a>
-			</div>
-		</nav>
 		
 		<section class="home-section">
 			<c:forEach var="blog" items="${blogs}">

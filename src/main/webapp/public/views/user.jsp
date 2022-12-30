@@ -8,8 +8,11 @@
 		
 		<section class="center-section">
 			<article class="center-box user-box">
-				<p class="user-name">
+				<p class="user-text">
 					<c:out value="${firstName}" /> <c:out value="${lastName}" />
+				</p>
+				<p class="user-text">
+					<c:out value="${email}" />
 				</p>
 				<div class="image-box">
 					<img src="${pageContext.request.contextPath}/public/img/<c:out value="${image}" />" alt="user-image" />						

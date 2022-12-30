@@ -1,6 +1,6 @@
 <jsp:include page="../partials/head.jsp" />
 
-<%@ taglib prefix="c" uri="jakarta.tags.core" %>>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <script src="${pageContext.request.contextPath}/public/js/auth.js" defer type="text/javascript"></script>
 

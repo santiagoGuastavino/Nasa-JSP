@@ -9,7 +9,7 @@ if (messageContainer.childNodes.length > 1) {
 const PATHS_AUTH = {
 	LOGIN: '/nasa/auth/login',
 	REGISTER: '/nasa/auth/register',
-}
+};
 
 const currentLocationAuth = window.location.pathname;
 

@@ -26,9 +26,9 @@ public class AuthController extends HttpServlet {
 	private List<String> messages;
 	
 	private static final String LOGIN_PATH = "/public/views/auth/login.jsp";
-	private static final String LOGIN_TITLE = "Login / NASA";
+	private static final String LOGIN_TITLE = "Login / Nasa";
 	private static final String REGISTER_PATH = "/public/views/auth/register.jsp";
-	private static final String REGISTER_TITLE = "Register / NASA";
+	private static final String REGISTER_TITLE = "Register / Nasa";
 	private static final String HOME_PATH = "../";
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
