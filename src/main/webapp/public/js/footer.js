@@ -3,6 +3,7 @@ const PATHS_FOOTER = {
 	LOGIN: '/nasa/auth/login',
 	REGISTER: '/nasa/auth/register',
 	USER: '/nasa/user',
+	BLOGS: '/nasa/blogs',
 };
 
 const ICONS_FOOTER = {
@@ -11,10 +12,6 @@ const ICONS_FOOTER = {
 }
 
 const currentLocationFooter = window.location.pathname;
-
-const iconFooter = document.querySelector('#icon');
-const linkToAuth = document.querySelector('#empty-session-link');
-const linkToUser = document.querySelector('#full-session-link');
 
 if (linkToAuth) {
 	if (currentLocationFooter === PATHS_FOOTER.INDEX) {

@@ -45,6 +45,9 @@
 	--orange-m: #ff5722;
 	--orange-d: #c41c00;
 	--orange-l: #ff8a50;
+	--green-m: #4caf50;
+	--green-d: #087f23;
+	--green-l: #80e27e;
 	--black1: #121212;
 	--black2: #1d1d1d;
 	--black3: #222222;
@@ -58,8 +61,23 @@
 	--border-m: var(--white) 1px solid;
 	--border-r: 6px;
 	--box-shadow: 3px 3px 3px #000;
+	--text-shadow-simple: 1px 1px 0 var(--black);
 	--hat-thick: 6px;
 	--transition: all 0.15s ease;
+	--blog-text-font: italic bold 30px Georgia, Serif;
+	--blog-text-shadow: -2px 1px 0 var(--blue-d), -3.5px 1.2px 0 var(--blue-d);
+	--blog-text-padding: 10px 5px 5px 5px;
+	--collection-text-shadow:
+		0 1px 0px var(--orange-d),
+		1px 0 0px var(--orange-m),
+		1px 2px 1px var(--orange-d),
+		2px 1px 1px var(--orange-m),
+		2px 3px 2px var(--orange-d),
+		3px 2px 2px var(--orange-m);
+	--collection-text-box-shadow-auto: inset 0 0 0 0 var(--orange-m);
+	--collection-text-box-shadow-hover: inset 350px 0 0 0 var(--orange-m);
+	--collection-text-transition: all 0.4s ease-in-out;
+	--collection-text-padding: 0 3px;
 }
 
 html,
@@ -134,7 +152,7 @@ input, button {
 	box-shadow: 0px -1.5px 1.5px var(--black);
 }
 
-.footer a {
+.footer .footer-link {
 	font-size: 25px;
 	width: 50px;
 	height: 50px;
@@ -235,9 +253,9 @@ input, button {
 
 .blog-article .blog-text .blog-title {
 	background-color: var(--blue-l);
-  	font: italic bold 30px Georgia, Serif;
-  	text-shadow: -2px 1px 0 var(--blue-d), -3.5px 1.2px 0 var(--blue-d);
-  	padding: 10px 5px 5px 5px;
+  	font: var(--blog-text-font);
+  	text-shadow: var(--blog-text-shadow);
+  	padding: var(--blog-text-padding);
   	margin-bottom: 5px;
 }
 
@@ -246,20 +264,17 @@ input, button {
 }
 
 .blog-article .blog-text .blog-collection a {
-	padding: 0 5px 0 8px;
-	background-color: var(--orange-l);
-  	font: italic bold 20px Georgia, Serif;
-  	text-shadow: -2px 1px 0 var(--orange-d), -3.5px 1.2px 0 var(--orange-d);
   	cursor: pointer;
-  	border-radius: var(--border-r);
-  	transition: var(--transition);
+	color: var(--orange-l);
+	text-shadow: var(--collection-text-shadow);
+	padding: var(--collection-text-padding);
+  	box-shadow: var(--collection-text-box-shadow-auto);
+  	transition: var(--collection-text-transition);
 }
 
 .blog-article .blog-text .blog-collection a:hover {
-	box-shadow: 0px 0px 3px 1px var(--orange-l);
-	text-shadow: none;
-	background-color: var(--orange-m);
-	text-shadow: -2px 1px 0 var(--black), -3.5px 1.2px 0 var(--black);
+	box-shadow: var(--collection-text-box-shadow-hover);
+	color: var(--white);
 }
 
 .blog-article .blog-img {
@@ -278,7 +293,7 @@ input, button {
 .center-box {
 	margin-top: 30px;
 	width: 250px;
-	background-color: var(--blue-m);
+	background-color: var(--green-m);
 	box-shadow: var(--box-shadow);
 	border-radius: var(--border-r);
 	position: relative;
@@ -291,7 +306,7 @@ input, button {
 	width: 100%;
 	top: 0;
 	left: 0;
-	background-color: var(--blue-d);
+	background-color: var(--white);
 	border-radius: var(--border-r) var(--border-r) 0 0;
 }
 
@@ -329,6 +344,7 @@ input, button {
 	color: var(--white);
 	text-indent: 5px;
 	width: 100%;
+	text-shadow: var(--text-shadow-simple);
 }
 
 .input {
@@ -347,7 +363,7 @@ input, button {
 }
 
 .button {
-	background-color: var(--blue-d);
+	background-color: var(--green-d);
 	cursor: pointer;
 	color: var(--white);
 	font-weight: 600px;
@@ -394,7 +410,7 @@ input, button {
 }
 
 .switch-auth p a:hover {
-	color: var(--blue-l);
+	color: var(--green-l);
 	text-decoration: none;
 	background-color: var(--black10);
 }

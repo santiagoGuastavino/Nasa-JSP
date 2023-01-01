@@ -4,16 +4,13 @@
 <script src="${pageContext.request.contextPath}/public/js/footer.js" defer type="text/javascript"></script>
 
 <footer class="footer">
-	<c:choose>
-		<c:when test="${sessionScope.userEmail == null}">
-			<a id="empty-session-link">
-				<i id="icon"></i>
-			</a>	
-		</c:when>
-		<c:otherwise>
-			<a id="full-session-link">
-				<i id="icon"></i>
-			</a>
-		</c:otherwise>
-	</c:choose>
+	<a class="footer-link">
+		<i class="fa-solid fa-house"></i>
+	</a>
+	<a class="footer-link">
+		<i class=""></i>
+	</a>
+	<a class="footer-link">
+		<i class="fa-solid fa-user"></i>
+	</a>
 </footer>
