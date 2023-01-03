@@ -68,16 +68,13 @@
 	--blog-text-shadow: -2px 1px 0 var(--blue-d), -3.5px 1.2px 0 var(--blue-d);
 	--blog-text-padding: 10px 5px 5px 5px;
 	--collection-text-shadow:
+		0px 0px 2px var(--black),
 		0 1px 0px var(--orange-d),
 		1px 0 0px var(--orange-m),
 		1px 2px 1px var(--orange-d),
 		2px 1px 1px var(--orange-m),
 		2px 3px 2px var(--orange-d),
 		3px 2px 2px var(--orange-m);
-	--collection-text-box-shadow-auto: inset 0 0 0 0 var(--orange-m);
-	--collection-text-box-shadow-hover: inset 350px 0 0 0 var(--orange-m);
-	--collection-text-transition: all 0.4s ease-in-out;
-	--collection-text-padding: 0 3px;
 }
 
 html,
@@ -125,17 +122,21 @@ input, button {
 	justify-content: flex-start;
 	align-items: center;
 	position:relative;
+	pointer-events: none;
 }
 
 .nav img {
 	height: 80%;
 	width: auto;
-	pointer-events: none;
 }
 
 .nav h1 {
 	color: var(--white);
-	pointer-events: none;
+}
+
+.nav span {
+	margin: 0 10px 0 auto;
+	color: white;
 }
 
 .footer {
@@ -164,11 +165,31 @@ input, button {
 	flex-flow: row wrap;
 	justify-content: center;
 	align-items: center;
+	margin: 0 10px;
+}
+
+.footer .footer-link#footer-link-home {
 	background-color: var(--blue-d);
 }
 
-.footer a:hover {
+.footer .footer-link#footer-link-home:hover {
 	background-color: var(--blue-m);
+}
+
+.footer .footer-link#footer-link-user {
+	background-color: var(--green-d);
+}
+
+.footer .footer-link#footer-link-user:hover {
+	background-color: var(--green-m);
+}
+
+.footer .footer-link#footer-link-collections {
+	background-color: var(--orange-d);
+}
+
+.footer .footer-link#footer-link-collections:hover {
+	background-color: var(--orange-m);
 }
 
 .home-navigation {
@@ -267,14 +288,29 @@ input, button {
   	cursor: pointer;
 	color: var(--orange-l);
 	text-shadow: var(--collection-text-shadow);
-	padding: var(--collection-text-padding);
-  	box-shadow: var(--collection-text-box-shadow-auto);
-  	transition: var(--collection-text-transition);
+  	transition: var(--transition);
+  	position: relative;
+}
+
+.blog-article .blog-text .blog-collection a:after {
+	content: '';
+	height: 2px;
+	position: absolute;
+	width: 100%;
+	left: -10px;
+	bottom: 0;
+	background-color: var(--white);
+	transition: var(--transition);
+	opacity: 0;
 }
 
 .blog-article .blog-text .blog-collection a:hover {
-	box-shadow: var(--collection-text-box-shadow-hover);
 	color: var(--white);
+}
+
+.blog-article .blog-text .blog-collection a:hover:after {
+	left: 0;
+	opacity: 0.8;
 }
 
 .blog-article .blog-img {

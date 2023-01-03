@@ -18,6 +18,7 @@ public class MainController extends HttpServlet {
 	private BlogsService blogsService;
 	
 	private static final String TITLE = "Home / Nasa";
+	private static final String SUBTITLE = "Latest 5 posts";
 	private static final String PATH = "./public/views/index.jsp";
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -26,6 +27,7 @@ public class MainController extends HttpServlet {
 		List<Blog> blogs = blogsService.getAll();
 		
 		request.setAttribute("title", TITLE);
+		request.setAttribute("subtitle", SUBTITLE);
 		request.setAttribute("blogs", blogs);
 		request.getRequestDispatcher(PATH)
 			.forward(request, response);

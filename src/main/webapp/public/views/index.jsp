@@ -17,7 +17,7 @@
 							Year: <c:out value="${blog.year}" />.
 						</p>
 						<p class="blog-collection">
-							From the <a><c:out value="${blog.collectionName}" /> collection</a>. 
+							From <a>the <c:out value="${blog.collectionName}" /> collection.</a> 
 						</p>					
 					</div>
 					<img

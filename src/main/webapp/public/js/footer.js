@@ -1,3 +1,4 @@
+/*
 const PATHS_FOOTER = {
 	INDEX: '/nasa/',
 	LOGIN: '/nasa/auth/login',
@@ -46,3 +47,5 @@ function setLink(targetLink, linkToSet) {
 	targetLink.href = linkToSet;
 	return;
 };
+*/
+

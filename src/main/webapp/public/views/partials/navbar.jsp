@@ -9,5 +9,6 @@
 		<h1>
 			Nasa Blog
 		</h1>
+		<span><c:out value="${subtitle}" /></span>
 	</nav>
 </div>
