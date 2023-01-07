@@ -18,7 +18,7 @@ public class MainController extends HttpServlet {
 	private BlogsService blogsService;
 	
 	private static final String TITLE = "Home / Nasa";
-	private static final String SUBTITLE = "Latest 5 posts";
+	private static final String SUBTITLE = "Latest 10 posts";
 	private static final String PATH = "./public/views/index.jsp";
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

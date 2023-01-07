@@ -58,6 +58,7 @@ public class BlogDAO implements DAO<Blog> {
 		String rawQuery = "SELECT blogs.id, title, image, year, collection_id, collections.id, name FROM blogs";
 		rawQuery += " INNER JOIN collections ON collection_id = collections.id";
 		rawQuery += " ORDER BY blogs.id ASC";
+		rawQuery += " LIMIT 10;";
 		
 		PreparedStatement preparedStatement = connection.prepareStatement(rawQuery);
 		
